@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejas Mukund Rasal - AI/ML Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #191970 0%, #4E3B64 50%, #191970 100%);
+            min-height: 100vh;
+            color: #4A4A4A;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(159, 181, 206, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(78, 59, 100, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #F5F5DC;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #9BB5CE;
+            font-weight: 300;
+            margin-bottom: 50px;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 
+                        0 0 0 8px rgba(159, 181, 206, 0.2);
+            transition: all 0.4s ease;
+            background: #C0C0C0;
+        }
+
+        .profile-image-wrapper:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 
+                        0 0 0 8px rgba(159, 181, 206, 0.4);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .content-card {
+            background: rgba(245, 245, 220, 0.98);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out;
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+            border: 1px solid rgba(192, 192, 192, 0.3);
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4A4A4A;
+            margin-bottom: 15px;
+        }
+
+        .about-section p:first-child {
+            color: #191970;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #191970;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #9BB5CE 0%, #4E3B64 100%);
+            border-radius: 2px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #9BB5CE 0%, #C0C0C0 100%);
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #191970 0%, #4E3B64 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 0.95;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(25, 25, 112, 0.4);
+        }
+
+        .project-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #191970;
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover h3,
+        .project-card:hover p {
+            color: #F5F5DC;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #4A4A4A;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .skills-section {
+            margin-top: 50px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #4E3B64 0%, #191970 100%);
+            color: #F5F5DC;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(78, 59, 100, 0.3);
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(78, 59, 100, 0.5);
+            background: linear-gradient(135deg, #9BB5CE 0%, #5F7161 100%);
+        }
+
+        .contact-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .email-link {
+            color: #191970;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            padding: 15px 35px;
+            border: 3px solid #191970;
+            border-radius: 50px;
+            background: transparent;
+        }
+
+        .email-link:hover {
+            background: #191970;
+            color: #F5F5DC;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(25, 25, 112, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #9BB5CE 0%, #C0C0C0 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #191970;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-8px) scale(1.15);
+            box-shadow: 0 15px 35px rgba(25, 25, 112, 0.4);
+            background: linear-gradient(135deg, #191970 0%, #4E3B64 100%);
+            color: #F5F5DC;
+        }
+
+        .social-links svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Accent decorations */
+        .accent-dot {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #9BB5CE 0%, transparent 70%);
+            opacity: 0.15;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.2); opacity: 0.25; }
+        }
+
+        .accent-dot:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 5%;
+        }
+
+        .accent-dot:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: 20%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .content-card {
+                padding: 30px;
+            }
+
+            .profile-image-wrapper {
+                width: 260px;
+                height: 260px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="accent-dot"></div>
+    <div class="accent-dot"></div>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1 class="floating">Tejas Mukund Rasal</h1>
+            <p class="subtitle">AI/ML Developer & Tech Enthusiast</p>
+            
+            <div class="profile-container">
+                <div class="profile-image-wrapper">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Crect fill='%239BB5CE' width='320' height='320'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='80' fill='%23191970' font-weight='bold'%3ETR%3C/text%3E%3C/svg%3E" alt="Tejas Rasal" class="profile-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="about-section">
+                <p>Studied Artificial Intelligence and Machine Learning at Mumbai University.</p>
+                <p>I love building with AI, and am fascinated by how machines and humans learn. Passionate about creating intelligent systems that solve real-world problems and push the boundaries of what's possible.</p>
+            </div>
+
+            <div class="skills-section">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Natural Language Processing</span>
+                    <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">Data Science</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>Recent Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Project One</h3>
+                        <p>An innovative AI-powered solution leveraging machine learning algorithms to solve complex problems. Built with Python and TensorFlow.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Project Two</h3>
+                        <p>Deep learning application utilizing neural networks for intelligent decision making. Implemented with PyTorch and modern architectures.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Project Three</h3>
+                        <p>Data-driven project focused on extracting insights and patterns from complex datasets using advanced analytics techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="contact-section">
+                <h2>Let's Connect</h2>
+                <a href="mailto:rasalt366@gmail.com" class="email-link">rasalt366@gmail.com</a>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/tejas-rasal-9a1202260" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/rasaltejas" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://twitter.com/TejasRasal11" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+
+                    <a href="mailto:rasalt366@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
