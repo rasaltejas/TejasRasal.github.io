@@ -52,7 +52,7 @@ function App() {
 
         <section className="mb-12">
           <img 
-            src="https://storage.googleapis.com/aistudio-hosting/workspace-v1-417100/projects/clx20ygg5000ds601vj7l1aom/images/clx25v45w000cs601e3i4e55m.jpeg" 
+            src=""C:\Users\tejas\Downloads\OneDrive\Desktop\PROJECT ENVIRONMENT\tejas portfolio\IMG-20250629-WA0042.jpg"" 
             alt="Tejas Rasal standing on a rock overlooking a lush green valley with overcast skies."
             className="w-full h-96 rounded-lg shadow-md object-cover"
           />
